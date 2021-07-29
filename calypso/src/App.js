@@ -1,13 +1,13 @@
-import logo from './logo.svg';
+import Logo-calypso from './logo-calypso.jpeg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={logo-calypso} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          El mejor <code>lugar </code> para tus recetas.
         </p>
         <a
           className="App-link"
