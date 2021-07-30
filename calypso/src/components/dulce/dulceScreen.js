@@ -6,7 +6,7 @@ export const dulceScreen = () => {
         <div>
             <h1>Platillos Dulces</h1>
             <br/>
-            <foodList publisher='Recetario virtual'/>
+            <foodList categoria='Dulce'/>
         </div>
     )
 }

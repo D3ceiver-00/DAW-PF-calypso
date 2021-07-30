@@ -8,22 +8,19 @@ const foodCard = ({food}) => {
         <div className='card ms-3' style={{maxWidth: 540}}>
             <div className='row no-gutters'>
                 <div className='col-md-4'>
-                    <img src={`./assets/heroes/${id}.jpg`} className='card-img'alt={superhero}/>
+                    <img src={`./assets/comida/${id}.jpg`} className='card-img'alt={nombre}/>
                 </div>
                 <div className='col-md-8'>
                     <div className='card-body'>
                         <h2 className='card-title mb-0 h5'>
-                            {superhero}
+                            {nombre}
                         </h2>
                         <hr className='my-1'/>
-                        <p className='card-text'>{alter_ego}</p>
-                        {
-                            (alter_ego !== characters) && <p className='card-text'>{characters}</p>
-                        }
+                        <p className='card-text'>{ingredientes}</p>
                         <p className='card-text'>
-                            <small className='text-muted'>{first_apperance}</small>
+                            <small className='text-muted'>{sabor}</small>
                         </p>
-                        <Link to={`./hero/${id}`}>
+                        <Link to={`./food/${id}`}>
                             más...
                         </Link>
                     </div>
@@ -33,8 +30,8 @@ const foodCard = ({food}) => {
     )
 }
 
-HeroCard.propTypes = {
-    hero: PropTypes.object.isRequired
+foodCard.propTypes = {
+    food: PropTypes.object.isRequired
 }
 
 export default foodCard

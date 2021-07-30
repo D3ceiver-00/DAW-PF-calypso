@@ -1,26 +1,26 @@
 import React, { useMemo } from 'react'
 import PropTypes from 'prop-types'
-import { getHeroByPublisher } from '../../selectors/getHeroByPublisher'
-import HeroCard from './HeroCard';
+import foodCard from './foodCard';
+import { getFoodByClass } from '../../selectors/getFoodByClass';
 
-export const HeroList = ({publisher}) => {
+export const foodList = ({categoria}) => {
     // este use memo, hace que se memorice el resultado de la petición
     //   para no volver a hcer el proceso a menos que haya cambiado el param
-    const heroes = useMemo(() => getHeroByPublisher(publisher), [publisher]);
+    const platillos = useMemo(() => getFoodByClass(categoria), [categoria]);
 
     return (
         <div className='card-columns animate__animated animate__fadeIn'>
             {
-                heroes.map( (hero) => (
-                    <HeroCard key = {hero.id} hero= {hero} />
+                platillos.map( (food) => (
+                    <foodCard key = {food.id} food= {food} />
                 ))
             }
         </div>
     )
 }
 
-HeroList.propTypes = {
-    publisher: PropTypes.string.isRequired
+foodList.propTypes = {
+    categoria: PropTypes.string.isRequired
 }
 
-export default HeroList
+export default foodList

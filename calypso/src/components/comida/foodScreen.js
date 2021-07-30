@@ -1,21 +1,21 @@
 import React, { useMemo } from 'react'
 import { Redirect, useParams } from 'react-router-dom'
-import { getHeroById } from '../../selectors/getFoodById';
+import { getFoodById } from '../../selectors/getFoodById';
 
-export const HeroScreen = ({history}) => {
-    const {heroeId} = useParams();
+export const foodScreen = ({history}) => {
+    const {foodId} = useParams();
 
     // este use memo, hace que se memorice el resultado de la petición
     //   para no volver a hcer el proceso a menos que haya cambiado el param
-    const heroInfo = useMemo(() => getHeroById(heroeId), [heroeId]);
+    const foodInfo = useMemo(() => getFoodById(foodId), [foodId]);
 
     // Check hero exists
-    if(!heroInfo) { return <Redirect to='/' />; }
-    const {superhero, alter_ego, publisher, first_appearance, characters} = heroInfo;
+    if(!foodInfo) { return <Redirect to='/' />; }
+    const {nombre, categoria, sabor, ingredientes} = foodId;
 
     const handleReturn = () => {
-        if(publisher === 'DC Comics') 
-            history.push('./dc');
+        if(categoria === 'Dulce') 
+            history.push('./dulce');
         else
             history.push('./');
     }
@@ -24,20 +24,18 @@ export const HeroScreen = ({history}) => {
         <div className='row mt-5'>
             <div className='col-4'>
                 <img 
-                    alt={superhero} 
+                    alt={nombre} 
                     className='img-thumbnail animate__animated animate__fadeInLeft'
-                    src={`../assets/heroes/${heroeId}.jpg`}  
+                    src={`../assets/heroes/${foodId}.jpg`}  
                 />
             </div>
             <div className='col-8'>
-                <h1 className='h3'>{superhero}</h1>
+                <h1 className='h3'>{nombre}</h1>
                 <ul className='list-group list-group-flush'>
-                    <li className='list-group-item'><strong>Alter ego:</strong> {alter_ego}</li>
-                    <li className='list-group-item'><strong>Publisher:</strong> {publisher}</li>
-                    <li className='list-group-item'><strong>First Appearance:</strong> {first_appearance}</li>
-                </ul>
-                <h2 className='h4'>Characters</h2>
-                <p className='px-3'>{characters}</p>
+                    <li className='list-group-item'><strong>Categoria:</strong> {categoria}</li>
+                    <li className='list-group-item'><strong>Sabor:</strong> {sabor}</li>
+                    <li className='list-group-item'><strong>Ingredientes:</strong> {ingredientes}</li>
+                </ul>,
                 <button 
                     className='btn btn-outline-info'
                     onClick={handleReturn}

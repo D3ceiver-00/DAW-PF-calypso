@@ -1,4 +1,5 @@
 import { useState } from "react"
+//hook para validar informacion
 
 export const useForm = (initialState = {}) => {
     const [values, setValues] = useState(initialState);

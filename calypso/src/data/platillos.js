@@ -3,6 +3,7 @@ export const platillos = [
     {
         'id': 'dulce-pastel',
         'nombre': 'Chocolato',
+        'categoria': 'Dulce',
         'sabor': 'chocolate',
         'ingredientes': 
         <ul>
@@ -16,6 +17,7 @@ export const platillos = [
     {
         'id': 'dulce-flan',
         'nombre': 'Flan',
+        'categoria': 'Dulce',
         'sabor': 'caramelo',
         'ingredientes': 
         <ul>
@@ -29,6 +31,7 @@ export const platillos = [
     {
         'id': 'dulce-gelatina',
         'nombre': 'Gelatina',
+        'categoria': 'Dulce',
         'sabor': 'frutas',
         'ingredientes': 
         <ul>
@@ -39,6 +42,7 @@ export const platillos = [
     {
         'id': 'salado-pizza',
         'nombre': 'Pizza',
+        'categoria': 'Salado',
         'sabor': 'pepperoni',
         'ingredientes': 
         <ul>
@@ -52,6 +56,7 @@ export const platillos = [
     {
         'id': 'salado-hamburguesa',
         'nombre': 'Hamburguesa',
+        'categoria': 'Salado',
         'sabor': 'res',
         'ingredientes': 
         <ul>
@@ -65,6 +70,7 @@ export const platillos = [
     {
         'id': 'salado-sopa',
         'nombre': 'Sopa',
+        'categoria': 'Salado',
         'sabor': 'pollo',
         'ingredientes': 
         <ul>

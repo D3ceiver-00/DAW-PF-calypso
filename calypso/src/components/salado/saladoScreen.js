@@ -6,7 +6,7 @@ export const saladoScreen = () => {
         <div>
             <h1>Comida salada</h1>
             <br/>
-            < foodList publisher= 'Comida Salada' />
+            < foodList categoria= 'Salado' />
         </div>
     )
 }

@@ -1,9 +1,10 @@
 import React, { useMemo } from 'react'
 import { useLocation } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm';
-import HeroCard from '../comida/foodCard';
 import queryString from 'query-string'
-import { getHeroesByName } from '../../selectors/getHeroesByName';
+import { getFoodByName } from '../../selectors/getFoodByName';
+import { foodCard } from '../comida/foodCard';
+
 // para trabajar con query string, existe este paquete
 // https://www.npmjs.com/package/query-string
 // queryString.parse(location.search)
@@ -13,19 +14,19 @@ export const SearchScreen = ({history}) => {
     const location = useLocation();
     const {q = ''} = queryString.parse(location.search);
 
-    const [{heroSearched}, handleInputChange, reset ] = useForm({
-        heroSearched: q
+    const [{foodSearched}, handleInputChange, reset ] = useForm({
+        foodSearched: q
     });
 
-    const filteredHeroes = useMemo(() => getHeroesByName(q), [q])
+    const filteredFood = useMemo(() => getFoodByName(q), [q])
 
     const handleSearch = (e) => {
         e.preventDefault();
-        history.push(`?q=${heroSearched}`);
+        history.push(`?q=${foodSearched}`);
     }
     return (
         <>
-            <h1>Search your Hero</h1>
+            <h1>Busca tu platillo!</h1>
             <br/>
             <div className='row'>
                 <div className='col-5'>
@@ -34,10 +35,10 @@ export const SearchScreen = ({history}) => {
                     <form onSubmit={handleSearch}>
                         <input 
                             type='text'
-                            placeholder="Your hero's name"
+                            placeholder="El nombre de tu platillo"
                             className='form-control'
-                            value={heroSearched}
-                            name='heroSearched'
+                            value={foodSearched}
+                            name='foodSearched'
                             autoComplete='off'
                             onChange={handleInputChange}
                         />
@@ -57,21 +58,21 @@ export const SearchScreen = ({history}) => {
                         (q === '') 
                             &&
                             <div className='alert alert-info'>
-                                Search a Hero!
+                                Busca un platillo!
                             </div>
                     }
                     {
-                        (q !== '' && filteredHeroes.length === 0) 
+                        (q !== '' && filteredFood.length === 0) 
                             &&
                             <div className='alert alert-danger'>
-                                There is no a hero with {q}
+                                There is no food with {q}
                             </div>
                     }
                     {
-                        filteredHeroes.map(hero => (
-                            <HeroCard 
-                                key={hero.id}
-                                hero={hero}
+                        filteredFood.map(food => (
+                            <foodCard
+                                key={food.id}
+                                food ={food}
                             />
                         ))
                     }
