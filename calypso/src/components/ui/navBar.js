@@ -32,7 +32,7 @@ const Navbar = () => {
                         exact
                         to="/dulce"
                     >
-                        Marvel
+                        Dulce
                     </NavLink>
 
                     <NavLink 
@@ -41,7 +41,7 @@ const Navbar = () => {
                         exact
                         to="/salado"
                     >
-                        DC
+                        Salado
                     </NavLink>
                     <NavLink
                         activeClassName='active'

@@ -4,7 +4,7 @@ import FoodList from '../comida/foodList'
 const SaladoScreen = () => {
     return (
         <div>
-            <h1>Comida salada</h1>
+            <h1>Platillos salados</h1>
             <br/>
             < FoodList categoria= 'Salado' />
         </div>
