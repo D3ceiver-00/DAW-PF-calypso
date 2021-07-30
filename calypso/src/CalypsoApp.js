@@ -9,7 +9,7 @@ const init = () => {
     return JSON.parse(localStorage.getItem('user')) || {logged:false};
 }
 
-export const HeroesApp = () => {
+export const CalypsoApp = () => {
     // con este hook de useReducer, se seguira el estado del usuario
     //  usando el authReducer
     const [user, dispatch] = useReducer(authReducer, {}, init);
@@ -24,4 +24,3 @@ export const HeroesApp = () => {
         </AuthContext.Provider>
     )
 }
-
