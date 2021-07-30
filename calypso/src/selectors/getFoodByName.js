@@ -1,4 +1,4 @@
-import { platillos } from "../data/platillos"
+import  platillos  from "../data/platillos"
 
 export const getFoodByName = (name) => {
     if(name === '') { return []; }

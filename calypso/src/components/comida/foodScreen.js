@@ -2,14 +2,14 @@ import React, { useMemo } from 'react'
 import { Redirect, useParams } from 'react-router-dom'
 import { getFoodById } from '../../selectors/getFoodById';
 
-export const foodScreen = ({history}) => {
+ const FoodScreen = ({history}) => {
     const {foodId} = useParams();
 
     // este use memo, hace que se memorice el resultado de la petición
     //   para no volver a hcer el proceso a menos que haya cambiado el param
     const foodInfo = useMemo(() => getFoodById(foodId), [foodId]);
 
-    // Check hero exists
+    // Check if food exists
     if(!foodInfo) { return <Redirect to='/' />; }
     const {nombre, categoria, sabor, ingredientes} = foodId;
 
@@ -46,3 +46,5 @@ export const foodScreen = ({history}) => {
         </div>
     )
 }
+
+export default FoodScreen;

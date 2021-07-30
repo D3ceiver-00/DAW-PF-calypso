@@ -1,8 +1,10 @@
 import React, { useContext } from 'react'
 import { AuthContext } from '../../auth/AuthContext'
-import { types } from '../../types/types'
+import { types } from '../../types/types';
 
-export const LoginScreen = ({history}) => {
+import LogoCalypso from '../../Logo-calypso.png'
+
+ const LoginScreen = ({history}) => {
 
     const {dispatch} = useContext(AuthContext)
 
@@ -20,24 +22,25 @@ export const LoginScreen = ({history}) => {
         };
 
         const action = {
-            type: types.login,
-            payload: actualUser
+          type: types.login,
+          payload: actualUser,
         };
         dispatch(action);
         history.replace(lastPath);
     }
 
     return (
-        <div className='container mt-5'>
-            <h1>Login Screen</h1>
-            <br/>
+      <div className='container mt-5'>
+        <h1>Login to Calypso!</h1>
+        <br />
+        <img src={LogoCalypso} alt='Logo Calypso'></img>
+        <br />
 
-            <button
-                className= 'btn btn-primary'
-                onClick={handleLogin}
-            >
-                Login
-            </button>
-        </div>
-    )
+        <button className='btn btn-primary' onClick={handleLogin}>
+          Login
+        </button>
+      </div>
+    );
 }
+
+export default LoginScreen;

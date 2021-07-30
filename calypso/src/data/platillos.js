@@ -1,5 +1,5 @@
 //Aqui van todos los platillos disponibles por el momento para buscar
-export const platillos = [
+const platillos = [
     {
         'id': 'dulce-pastel',
         'nombre': 'Chocolato',
@@ -82,3 +82,4 @@ export const platillos = [
         </ul>
     }
 ]
+export default platillos;

@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react'
 import PropTypes from 'prop-types'
-import foodCard from './foodCard';
+import FoodCard from './foodCard.js';
 import { getFoodByClass } from '../../selectors/getFoodByClass';
 
-export const foodList = ({categoria}) => {
+export const FoodList = ({categoria}) => {
     // este use memo, hace que se memorice el resultado de la petición
     //   para no volver a hcer el proceso a menos que haya cambiado el param
     const platillos = useMemo(() => getFoodByClass(categoria), [categoria]);
@@ -12,15 +12,15 @@ export const foodList = ({categoria}) => {
         <div className='card-columns animate__animated animate__fadeIn'>
             {
                 platillos.map( (food) => (
-                    <foodCard key = {food.id} food= {food} />
+                    <FoodCard key = {food.id} food= {food} />
                 ))
             }
         </div>
     )
 }
 
-foodList.propTypes = {
+FoodList.propTypes = {
     categoria: PropTypes.string.isRequired
 }
 
-export default foodList
+export default FoodList

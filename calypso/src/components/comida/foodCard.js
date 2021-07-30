@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 
-const foodCard = ({food}) => {
+const FoodCard = ({food}) => {
     const {id, nombre, sabor, ingredientes} = food;
     return (
         <div className='card ms-3' style={{maxWidth: 540}}>
@@ -30,8 +30,8 @@ const foodCard = ({food}) => {
     )
 }
 
-foodCard.propTypes = {
+FoodCard.propTypes = {
     food: PropTypes.object.isRequired
 }
 
-export default foodCard
+export default FoodCard

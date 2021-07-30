@@ -1,12 +1,14 @@
 import React from 'react'
-import foodList from '../comida/foodList'
+import FoodList from '../comida/foodList'
 
-export const saladoScreen = () => {
+const SaladoScreen = () => {
     return (
         <div>
             <h1>Comida salada</h1>
             <br/>
-            < foodList categoria= 'Salado' />
+            < FoodList categoria= 'Salado' />
         </div>
     )
 }
+
+export default SaladoScreen

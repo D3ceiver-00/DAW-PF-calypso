@@ -3,13 +3,13 @@ import { useLocation } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm';
 import queryString from 'query-string'
 import { getFoodByName } from '../../selectors/getFoodByName';
-import { foodCard } from '../comida/foodCard';
+import FoodCard from '../comida/foodCard';
 
 // para trabajar con query string, existe este paquete
 // https://www.npmjs.com/package/query-string
 // queryString.parse(location.search)
 
-export const SearchScreen = ({history}) => {
+ const SearchScreen = ({history}) => {
 
     const location = useLocation();
     const {q = ''} = queryString.parse(location.search);
@@ -70,7 +70,7 @@ export const SearchScreen = ({history}) => {
                     }
                     {
                         filteredFood.map(food => (
-                            <foodCard
+                            <FoodCard
                                 key={food.id}
                                 food ={food}
                             />
@@ -81,3 +81,5 @@ export const SearchScreen = ({history}) => {
         </>
     )
 }
+
+export default SearchScreen
